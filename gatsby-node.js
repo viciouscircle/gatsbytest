@@ -36,17 +36,6 @@ exports.createPages = ({ graphql, actions }) => {
             },
           })
         })
-        
-        const pages = result.data.allContentfulPage.edges
-        pages.forEach((page, index) => {
-          createPage({
-            path: `/${page.node.slug}/`,
-            component: blogPost,
-            context: {
-              slug: page.node.slug
-            },
-          })
-        })
       })
     )
   })
